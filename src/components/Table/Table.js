@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Table.css";
 
 const Table = (props) => {
   console.log(props.tableData);
-
+  const history = useHistory();
+  const handleRowClick = (res) => {
+    history.push(`/details/${res.id}`);
+  } 
   return (
     <div className="table-reponsive-sm">
       <table className="table table-reponsive table-striped text-center ">
@@ -20,19 +23,23 @@ const Table = (props) => {
 
         <tbody>
           {props.tableData
-            ? props.tableData.map((res) => {
+            ? props.tableData.map((res, id) => {
                 return (
-                  <tr className="table-primary">
+                  // <Link to={`/details/${res.id}`} key={id}>
+                  
+                  <tr className="table-primary" key={id} onClick={()=> handleRowClick(res)} >
                     <th scope="row">{res.accountId}</th>
                     <td>{res.accountType}</td>
                     <td>{res.displayName}</td>
                     <td>{res.role}</td>
                     <td>{res.price}</td>
                   </tr>
+              
                 );
               })
             : "There is no data check it out !"}
         </tbody>
+      
       </table>
     </div>
   );
