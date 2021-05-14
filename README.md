@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Link
 
-https://react-using-chartjs.vercel.app/
+https://react-using-chartjs-slks50yl7-kpnemre.vercel.app/
 
 
 ## Available Scripts
