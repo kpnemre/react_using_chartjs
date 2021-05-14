@@ -5,10 +5,6 @@ import "./LineChart.css";
 
 const LineChart = ({ chartData }) => {
 
-  // console.log("chart:", chartData);
-
-  // const date1 = chartData.map((res) => res.date);
-  // console.log("date:", date1);
   
 // Change time format "2019-07-05T00:00:00" to "2019-07-04"
   const date = chartData.map((res) => {
@@ -16,16 +12,16 @@ const LineChart = ({ chartData }) => {
     var mydate = time.toISOString().slice(0, 10);
     return mydate;
   });
-  // console.log("date:", date);
+
 
   const equity = chartData.map((res) => res.equity);
-  // console.log("equity:", equity);
+
 
   const quantity = chartData.map((res) => res.quantity);
-  // console.log("equity:", equity);
+
 
   const saleCount = chartData.map((res) => res.saleCount);
-  // console.log("equity:", equity);
+
 
   return (
     <>
