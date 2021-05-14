@@ -25,7 +25,7 @@ const Table = (props) => {
           {props.tableData
             ? props.tableData.map((res, id) => {
                 return (
-                  // <Link to={`/details/${res.id}`} key={id}>
+           
                   
                   <tr className="table-primary" key={id} onClick={()=> handleRowClick(res)} >
                     <th scope="row">{res.accountId}</th>

@@ -4,49 +4,19 @@ import { useParams } from "react-router-dom";
 
 export default function TableDetail() {
   const [datas, setDatas] = useState([]);
-  // const [data, setData] = useState([]);
-  // const [keys, setKeys] = useState([]);
-  // const [values, setValues] = useState([]);
+
 
   useEffect(() => {
     fetchData()
       .then((res) => setDatas(res.nodes))
       .catch((err) => console.log(err));
-    // filteredData()
+ 
   }, []);
 
   const { id } = useParams();
   const ids = parseInt(id);
   const data = datas.filter((f) => f.id === ids)[0];
 
-  // const keys = data?.Object.keys(data)
-  // const values = data?.Object.values(data)
-  // console.log("keys",keys);
-  // console.log("values",values);
-
-  // const filteredData = ()=>{
-  //   const data = datas.filter((f) => f.id === ids)[0]
-  //   setData(data)
-  //   const keys = Object.keys(data)
-  //   const values = Object.values(data)
-  //   console.log("keys",keys);
-  //   console.log("values",values);
-  // }
-  // const getKeysvalues = ()=>{
-  //   filteredData()
-  //   .then((data)=> {return (
-  //     setKeys(Object.keys(data)),
-  //     setValues(Object.values(data))
-
-  //   )}
-  //    )
-  // }
-
-  // console.log("keys", keys);
-  // console.log("values", values);
-
-  console.log("DATAS:", datas);
-  console.log("DATA:", data);
 
   return (
     <div className="container mt-5">
